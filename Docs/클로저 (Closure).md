@@ -7,7 +7,8 @@
 ## Description
 - 개요와 설명을 작성
 - closure = 폐쇄하다. 
-- 
+- _Closures_ are self-contained blocks of functionality that can be passed around and used in your code. 
+- Closures in Swift are similar to closures, anonymous functions, lambdas, and blocks in other programming languages.
 
 ## 주요 기능
 + 실제 활용을 작성
