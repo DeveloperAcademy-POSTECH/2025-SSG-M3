@@ -4,7 +4,7 @@ Swift Study Group에 오신 것을 환영합니다! 🤗
 이 저장소는 Swift 언어를 탐구하고 깊이 있는 학습을 진행하기 위한 공간입니다. 
 Obsidian을 활용하여 학습한 내용을 Markdown 노트로 기록하고, GitHub를 통해 협업하여 서로의 학습을 공유하고 발전할 수 있도록 구성되었습니다.
 
-### 🪐 지금 우리는 (매주 업데이트 예정)
+### 🪐 지금 우리는 (매주 업데이트 예정) 
 <img width="1300" alt="image" src="https://github.com/user-attachments/assets/ee53a167-bd0a-4656-822b-a3548ac28a9d" />
 
 ### 👥 Team Member
