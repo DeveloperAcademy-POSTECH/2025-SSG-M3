@@ -3,5 +3,4 @@
 
 
 ## Keyword
-- [[POP - Testability.md|POP - Testability]]
-- [[OneThing.md|OneThing]]
+- [[POP - Testability|POP - Testability]]
