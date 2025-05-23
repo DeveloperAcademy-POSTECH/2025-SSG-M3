@@ -83,8 +83,8 @@ POP은 책임을 쪼개는 데 유리하다.
 
 ---
 
+## GQ
+-  **POP - 왜 DI(의존성 주입)과 궁합이 좋을까?**
 
-
-
-
-
+## Keyword
+- [[POP - 왜 DI와 궁합이 좋을까?|Dependency Injection(DI)]]
