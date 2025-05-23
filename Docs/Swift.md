@@ -13,7 +13,7 @@
     
 - **성능 (Performance)**: [[LLVM 컴파일러]]를 통해 빠른 코드 실행을 지원
     
-- **현대적 문법 (Modern Syntax)**: [[클로저 (Closure)]], [[2025-SSG-M3/Docs/프로토콜 지향 프로그래밍 (POP)]], [[제네릭 (Generic)]], [[열거형 (Enumeration)]] 등의 최신 프로그래밍 개념을 지원
+- **현대적 문법 (Modern Syntax)**: [[클로저 (Closure)]], [[프로토콜 지향 프로그래밍 (POP)]], [[제네릭 (Generic)]], [[열거형 (Enumeration)]] 등의 최신 프로그래밍 개념을 지원
     
 - **오픈 소스 (Open Source)**: Swift는 오픈 소스로 제공되며, 활발한 커뮤니티에서 발전하고 있음
 
@@ -48,7 +48,7 @@ print(interestingNumbers["primes"]!)
 + [[옵셔널(Optionals)]]
 + [[LLVM 컴파일러]]
 + [[클로저 (Closure)]]
-+ [[2025-SSG-M3/Docs/프로토콜 지향 프로그래밍 (POP)]]
++ [[프로토콜 지향 프로그래밍 (POP)]]
 + [[제네릭 (Generic)]]
 + [[열거형 (Enumeration)]]
 + [[Swift Standard Library]]
