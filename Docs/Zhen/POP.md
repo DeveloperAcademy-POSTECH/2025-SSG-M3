@@ -10,7 +10,7 @@
 + 실제 활용을 작성
 
 ## 코드 예시
-- 효율적인 예시 1. 
+- 1. 효율
  ```
  let vehicles: [Drivable] = [Car(), Bus()]
 for v in vehicles {
