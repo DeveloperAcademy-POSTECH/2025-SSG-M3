@@ -10,14 +10,14 @@
 + 실제 활용을 작성
 
 ## 코드 예시
-- 1. 효율
+- 1. 공통 인터페이스로 다형성을 제공하는 경우
  ```
  let vehicles: [Drivable] = [Car(), Bus()]
 for v in vehicles {
-    v.drive() // 타입 상관없이 동일한 방식으로 호출 가능!
+    v.drive()
 }
 ```
--
+- 2. 
 
 
 
