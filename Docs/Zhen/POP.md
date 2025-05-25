@@ -17,8 +17,27 @@ for v in vehicles {
     v.drive()
 }
 ```
-- 2. 
+- 2. extension 을 사용하면 기본 구현을 둘 수도 있음 (+override)
+```
+protocol Drivable {
+    func drive()
+}
 
+extension Drivable {
+    func drive() {
+        print("기본 운전 방식입니다")
+    }
+}
+
+struct Car: Drivable {}       // 구현 안 해도 기본 제공
+struct Bus: Drivable {
+    func drive() { print("버스 운전은 좀 달라요") }
+}
+
+Car().drive() // 기본 운전 방식
+Bus().drive() // 버스 운전은 좀 달라요
+
+```
 
 
 ## Keywords
