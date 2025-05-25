@@ -11,8 +11,14 @@
 
 ## 코드 예시
 - 효율적인 예시 1. 
-- ''''''
+ ```
+ let vehicles: [Drivable] = [Car(), Bus()]
+for v in vehicles {
+    v.drive() // 타입 상관없이 동일한 방식으로 호출 가능!
+}
+```
 -
+
 
 
 ## Keywords
