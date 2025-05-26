@@ -55,7 +55,7 @@ struct Bus: Drivable {
 }
 
 ~~~
-	1-1. 해결방안
+1-1. 해결방안
 ~~~
 protocol Drivable {
     func drive()
@@ -71,7 +71,6 @@ extension Drivable {
 ~~~
 2. 저장 속성(stored property)을 사용하고 싶을 때. 
 		cf. stored property 와 computed property 의 차이는 ? 
-		
 ```
 //저장 속성
 struct Dog {
@@ -82,8 +81,19 @@ var greeting: String {
     return "Hello!"
 }
 ```
-프로토콜에는 구체적인 값이 들어가지 않고, 실제 저장되는 것도 아니기 때문에 저장 속성을 사용할 수 없다. 
+> 프로토콜에는 구체적인 값이 들어가지 않고, 실제 저장되는 것도 아니기 때문에 저장 속성을 사용할 수 없다. 
 
+만약 var id 를 계속 넣어야 할 때, 아래처럼 비효율적이 될 수 있음 
+~~~
+struct User: Identifiable {
+    var id: String // 여기서 직접 선언
+}
+
+struct Book: Identifiable {
+    var id: String // 또 다시 선언
+}
+
+~~~
 ## Keywords
 + 파생된 키워드들을 작성
 
