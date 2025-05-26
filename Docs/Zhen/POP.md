@@ -97,9 +97,13 @@ struct Book: Identifiable {
 * 2-2. 해결방안 : 이럴 때는 class 와 상속을 사용하는 게 편하다~ 
 
 3. Generic 관련 문제 (*hard)
+		cf. Generic 이란? 
 
 ## Keywords
 + 파생된 키워드들을 작성
 
 ## References
 - 참고한 레퍼런스를 작성 (예 : Apple의 공식 문서)
+- 블로그 
+- https://babbab2.tistory.com/136
+- 
