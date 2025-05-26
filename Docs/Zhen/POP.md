@@ -66,6 +66,8 @@ extension Drivable {
         print("Driving in a default way")
     }
 }
+
+//이렇게 하면 디폴트 값을 넣어서 쓸 수도 있고 override 해서 쓰기도 가능. 
 ~~~
 2. 저장 속성(stored property)을 사용하고 싶을 때. 
 		cf. stored property 와 computed property 의 차이는 ? 
@@ -80,7 +82,7 @@ var greeting: String {
     return "Hello!"
 }
 ```
-		
+	프로토콜에는 구체적인 값이 들어가지 않고
 ## Keywords
 + 파생된 키워드들을 작성
 
