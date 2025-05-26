@@ -41,7 +41,7 @@ Bus().drive() // 버스 운전은 좀 달라요
 ```
 ***
 ### 비효율적으로 사용하는 사례
-1. 동일한 로직이 여러 타입에서 중복 사용될 때 
+#### 1. 동일한 로직이 여러 타입에서 중복 사용될 때 
 ~~~
 protocol Drivable {
     func drive()
@@ -71,7 +71,7 @@ extension Drivable {
 //이렇게 하면 디폴트 값을 넣어서 쓸 수도 있고 override 해서 쓰기도 가능. 
 ~~~
 ***
-2. 저장 속성(stored property)을 사용하고 싶을 때. 
+#### 2. 저장 속성(stored property)을 사용하고 싶을 때. 
 		cf. stored property 와 computed property 의 차이는 ? 
 ```
 //저장 속성
@@ -98,7 +98,7 @@ struct Book: Identifiable {
 ~~~
 * 2-2. 해결방안 : 이럴 때는 class 와 상속을 사용하는 게 편하다~ 
 ***
-3. Generic 관련 문제 (*hard*) - *associatedtype*
+#### 3. Generic 관련 문제 (⭐️⭐️⭐️⭐️) - *associatedtype*
 	cf. Generic 이란? 
 ~~~
 func swapInts(_ a: inout Int, _ b: inout Int) {
