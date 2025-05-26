@@ -55,7 +55,7 @@ struct Bus: Drivable {
 }
 
 ~~~
-1-1. 해결방안
+* 1-2. 해결방안 : extension 과 함께 사용하자 ~ 
 ~~~
 protocol Drivable {
     func drive()
@@ -94,6 +94,7 @@ struct Book: Identifiable {
 }
 
 ~~~
+* 2-2. 해결방안 : 이럴 때는 class 와 상속을 사용하는 게 편하다~ 
 ## Keywords
 + 파생된 키워드들을 작성
 
