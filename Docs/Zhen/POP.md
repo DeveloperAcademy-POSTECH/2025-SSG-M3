@@ -95,6 +95,9 @@ struct Book: Identifiable {
 
 ~~~
 * 2-2. 해결방안 : 이럴 때는 class 와 상속을 사용하는 게 편하다~ 
+
+3. Generic 관련 문제 (*hard)
+
 ## Keywords
 + 파생된 키워드들을 작성
 
