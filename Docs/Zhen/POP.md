@@ -40,7 +40,7 @@ Bus().drive() // 버스 운전은 좀 달라요
 
 ```
 ### 비효율적으로 사용하는 사례
-1. 동일한 로직이 여러 타입에서 중복 사용될 때 -> (extension과 함께 사용하는게 효율적)
+1. 동일한 로직이 여러 타입에서 중복 사용될 때 
 ~~~
 protocol Drivable {
     func drive()
@@ -67,7 +67,7 @@ extension Drivable {
     }
 }
 ~~~
-
+2. 저장 속성을 
 ## Keywords
 + 파생된 키워드들을 작성
 
