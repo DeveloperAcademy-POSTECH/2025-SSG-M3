@@ -139,15 +139,40 @@ struct VStack: Stack {
 
 ~~~
 
-근데? 이런식으로 associatedtype 을 사용하면 쉽게 에러가 남. 
+근데? 이런식으로 associatedtype 을 사용하면 꺼내 쓸 때 주의해야 함. 
 ~~~
 protocol DataSource {
     associatedtype Item
     func item(at index: Int) -> Item
 }
 
-//에러 발생
+//여기서 에러 발생
 let source: DataSource
+~~~
+컴파일러가 DataSource 는 아는데 그 안에 Item의 타입을 정확하게 정의하지 않았기 때문에 에러가 나는 것. 
+
+해결방법
+- 3-1. 제네릭으로 감싸줌
+~~~
+> func printItems<Source: DataSource>(source: Source) {
+    let firstItem = source.item(at: 0)
+    print(firstItem)
+}
+~~~
+- 3-2. type erasure (?) : 너무 어려워서 gpt 코드만 던집니다... 
+~~~
+struct AnyDataSource<T>: DataSource {
+    typealias Item = T
+    private let _item: (Int) -> T
+
+    init<DS: DataSource>(_ dataSource: DS) where DS.Item == T {
+        _item = dataSource.item
+    }
+
+    func item(at index: Int) -> T {
+        return _item(index)
+    }
+}
 ~~~
 
 ## Keywords
