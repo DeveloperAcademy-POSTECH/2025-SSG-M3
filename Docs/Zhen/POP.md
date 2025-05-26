@@ -98,6 +98,21 @@ struct Book: Identifiable {
 
 3. Generic 관련 문제 (*hard*) - *associatedtype*
 		cf. Generic 이란? 
+~~~
+func swapInts(_ a: inout Int, _ b: inout Int) {
+    let temp = a
+    a = b
+    b = temp
+}
+//이 함수를 제네릭으로 바꾸면 
+func swapValues<T>(_ a: inout T, _ b: inout T) {
+    let temp = a
+    a = b
+    b = temp
+}
+
+// cf. inout은 값 자체를 넘기는게 아니라 참조로 전달해줌
+~~~
 
 ## Keywords
 + 파생된 키워드들을 작성
