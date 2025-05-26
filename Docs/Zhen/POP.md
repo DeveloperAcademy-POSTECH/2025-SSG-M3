@@ -39,6 +39,7 @@ Car().drive() // 기본 운전 방식
 Bus().drive() // 버스 운전은 좀 달라요
 
 ```
+***
 ### 비효율적으로 사용하는 사례
 1. 동일한 로직이 여러 타입에서 중복 사용될 때 
 ~~~
@@ -69,6 +70,7 @@ extension Drivable {
 
 //이렇게 하면 디폴트 값을 넣어서 쓸 수도 있고 override 해서 쓰기도 가능. 
 ~~~
+***
 2. 저장 속성(stored property)을 사용하고 싶을 때. 
 		cf. stored property 와 computed property 의 차이는 ? 
 ```
@@ -95,9 +97,9 @@ struct Book: Identifiable {
 
 ~~~
 * 2-2. 해결방안 : 이럴 때는 class 와 상속을 사용하는 게 편하다~ 
-
+***
 3. Generic 관련 문제 (*hard*) - *associatedtype*
-		cf. Generic 이란? 
+	cf. Generic 이란? 
 ~~~
 func swapInts(_ a: inout Int, _ b: inout Int) {
     let temp = a
@@ -117,16 +119,27 @@ func swapValues<T>(_ a: inout T, _ b: inout T) {
 ~~~
 
 즉, 제네릭은 추상화(유연성)를 위해 필요한 것인데, protocol 에서 Generic을 사용하려면 'associatedtype'을 사용해야 함. 
+
 ~~~
 protocol Stack {
-
-	associatedtype value    //타입 제한 두고 싶으면 Equatable 이런식으로 
+	associatedtype value    //타입 제한 두고 싶으면 Equatable 도 ok
     func push(value: value)
     func pop() -> value
 
 }
 
+//이렇게 정의하면 채택하는 곳에서는 다음과 같이 사용
+
+struct VStack: Stack {
+	typealias value = Int  // 생략하고 바로 value 에 Int 넣어도 됨
+    func push(value: value) { }
+    func pop() -> value { ... }
+
+}
+
 ~~~
+
+근데? 이런식으로 
 ## Keywords
 + 파생된 키워드들을 작성
 
