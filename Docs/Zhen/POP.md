@@ -67,7 +67,8 @@ extension Drivable {
     }
 }
 ~~~
-2. 저장 속성을 
+2. 저장 속성(stored property)을 사용하고 싶을 때. 
+		cf. s
 ## Keywords
 + 파생된 키워드들을 작성
 
