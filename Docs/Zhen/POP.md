@@ -6,7 +6,6 @@
 - 프로토콜은 기본적으로 **규약**이다. 설계 혹은 추상화를 통해 타입이 가져야 할 속성과 행동을 명세하기 위한 것이고, 따라서 전역에서만 사용이 가능하다. (함수와 다른 점)
 
 - 그렇다면 언제 비효율적일까? 
-- 
 
 
 ## 코드 예시
@@ -99,7 +98,7 @@ struct Book: Identifiable {
 * 2-2. 해결방안 : 이럴 때는 class 와 상속을 사용하는 게 편하다~ 
 ***
 #### 3. Generic 관련 문제 (⭐️⭐️⭐️⭐️) - *associatedtype*
-	cf. Generic 이란? 
+- cf. Generic 이란? 
 ~~~
 func swapInts(_ a: inout Int, _ b: inout Int) {
     let temp = a
@@ -159,7 +158,8 @@ let source: DataSource
     print(firstItem)
 }
 ~~~
-- 3-2. type erasure (?) : 너무 어려워서 gpt 코드만 던집니다... 
+
+- 3-2. type erasure (타입 지우기 ?)
 ~~~
 struct AnyDataSource<T>: DataSource {
     typealias Item = T
@@ -173,13 +173,51 @@ struct AnyDataSource<T>: DataSource {
         return _item(index)
     }
 }
+
+//이렇게 하면 let source: DataSource 해서 쓸 수 있다고 함..
+~~~
+
+#### 3-1. associatedtype + Generic 일 때는 기본값 가질 수 x 
+위에서 배웠던 것 처럼 extension 을 통해 디폴트 값을 만들고 싶을 때 주의할 점임. 
+~~~
+protocol DataSource {
+    associatedtype Item
+    func add(_ item: Item)
+}
+
+extension DataSource {
+    func add(_ item: Item = ???) {
+    }
+}
+
+//이러면 Generic parameter 'Item' could not be inferred 에러 등장
+~~~
+
+에러가 나는 이유 자체는 똑같음 ! 
+컴파일러가 타입 추론을 못해서... -> 결국 타입을 확정하거나 다른 방식으로 작성하면 됨
+
+방법 1 
+~~~
+struct IntSource: DataSource {
+    func add(_ item: Int = 0) {
+        print("Added \(item)")
+    }
+}
+~~~
+방법 2
+~~~
+func add<T>(_ item: T = 0) {
+    print(item)
+}
 ~~~
 
 ## Keywords
 + 파생된 키워드들을 작성
 
 ## References
-- 참고한 레퍼런스를 작성 (예 : Apple의 공식 문서)
 - 블로그 
-- https://babbab2.tistory.com/136
-- 
+	- https://babbab2.tistory.com/136
+	- https://babbab2.tistory.com/181
+	- https://mojitobar.tistory.com/9
+- Apple 의 공식 문서 
+	- https://docs.swift.org/swift-book/documentation/the-swift-programming-language/protocols/
