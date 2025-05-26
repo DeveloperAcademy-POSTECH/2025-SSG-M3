@@ -55,10 +55,19 @@ struct Bus: Drivable {
 }
 
 ~~~
-		해결방안
+	1-1. 해결방안
+~~~
+protocol Drivable {
+    func drive()
+}
+
+extension Drivable {
+    func drive() {
+        print("Driving in a default way")
+    }
+}
 ~~~
 
-~~~
 ## Keywords
 + 파생된 키워드들을 작성
 
