@@ -23,7 +23,7 @@ POP와 OOP 모두 소프트웨어의 재사용성과 유지보수성을 높이�
 
 ## 예제 코드
 ### OOP
-```
+```swift
 class Animal {
     func sound() -> String {
         return "Some sound"
@@ -50,7 +50,7 @@ makeSound(of: Dog()) // Woof
 makeSound(of: Cat()) // Meow
 ```
 ### POP
-```
+```swift
 protocol Animal {
     func sound() -> String
 }
