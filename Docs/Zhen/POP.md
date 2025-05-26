@@ -139,7 +139,17 @@ struct VStack: Stack {
 
 ~~~
 
-근데? 이런식으로 
+근데? 이런식으로 associatedtype 을 사용하면 쉽게 에러가 남. 
+~~~
+protocol DataSource {
+    associatedtype Item
+    func item(at index: Int) -> Item
+}
+
+//에러 발생
+let source: DataSource
+~~~
+
 ## Keywords
 + 파생된 키워드들을 작성
 
