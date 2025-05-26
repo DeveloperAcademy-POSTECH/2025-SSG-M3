@@ -10,7 +10,7 @@
 - 모든 포인터 타입에서 NULL 또는 nullptr를 사용한다.
 - 프로그래머가 직접 null 체크를 해야 한다.
 - 실수하면 Segmentation Fault가 발생할 수 있다.
-```
+```cpp
 char* name = nullptr;
 if (name != nullptr) {
     printf("%s\n", name);
@@ -24,13 +24,13 @@ if (name != nullptr) {
 - 프로그래머가 명시적으로 null 체크를 해줘야 한다.
 - Java 8부터는 `Optional<T>`이 도입됐다.
 	- 하지만 주로 리턴값에만 권장되며, 필드나 파라미터에서는 권장되지 않는다.
-```
+```java
 if (user != null && user.getName() != null) {
     System.out.println(user.getName().length());
 }
 ```
 
-```
+```java
 Optional<String> name = Optional.ofNullable(user.getName());
 
 name.ifPresent(n -> System.out.println(n.length()));
