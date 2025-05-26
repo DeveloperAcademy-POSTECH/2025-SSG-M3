@@ -104,7 +104,9 @@ func swapInts(_ a: inout Int, _ b: inout Int) {
     a = b
     b = temp
 }
+
 //이 함수를 제네릭으로 바꾸면 
+
 func swapValues<T>(_ a: inout T, _ b: inout T) {
     let temp = a
     a = b
@@ -114,6 +116,7 @@ func swapValues<T>(_ a: inout T, _ b: inout T) {
 // cf. inout은 값 자체를 넘기는게 아니라 참조로 전달해줌
 ~~~
 
+즉, 제네릭은 추상화(유연성)를 위해 필요한 것인데, protocol 에서 Generic을 사용하려면 'associatedtype'을 사용해야 함. 
 ## Keywords
 + 파생된 키워드들을 작성
 
