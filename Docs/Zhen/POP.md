@@ -117,6 +117,16 @@ func swapValues<T>(_ a: inout T, _ b: inout T) {
 ~~~
 
 즉, 제네릭은 추상화(유연성)를 위해 필요한 것인데, protocol 에서 Generic을 사용하려면 'associatedtype'을 사용해야 함. 
+~~~
+protocol Stack {
+
+	associatedtype value    //타입 제한 두고 싶으면 Equatable 이런식으로 
+    func push(value: value)
+    func pop() -> value
+
+}
+
+~~~
 ## Keywords
 + 파생된 키워드들을 작성
 
