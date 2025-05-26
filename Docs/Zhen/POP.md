@@ -96,7 +96,7 @@ struct Book: Identifiable {
 ~~~
 * 2-2. 해결방안 : 이럴 때는 class 와 상속을 사용하는 게 편하다~ 
 
-3. Generic 관련 문제 (*hard)
+3. Generic 관련 문제 (*hard*) - associated 
 		cf. Generic 이란? 
 
 ## Keywords
