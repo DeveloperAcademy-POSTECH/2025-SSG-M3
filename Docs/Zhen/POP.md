@@ -70,7 +70,16 @@ extension Drivable {
 2. 저장 속성(stored property)을 사용하고 싶을 때. 
 		cf. stored property 와 computed property 의 차이는 ? 
 		
-		
+```
+//저장 속성
+struct Dog {
+    var name: String
+}
+//연산 속성
+var greeting: String {
+    return "Hello!"
+}
+```
 		
 ## Keywords
 + 파생된 키워드들을 작성
