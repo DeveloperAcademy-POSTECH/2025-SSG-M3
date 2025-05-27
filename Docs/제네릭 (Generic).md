@@ -34,7 +34,7 @@ func swapTwoValues<T>(_ a: inout T, _ b: inout T) {
 
 ## Keywords
 + 제네릭 함수
-+ 프로토콜 제약
++ 프로토콜 제약 
 + 클래스 제약
 + 역제네릭(Inverse Generics)
 + Associated Type
