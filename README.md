@@ -4,19 +4,23 @@ Swift Study Group에 오신 것을 환영합니다! 🤗
 이 저장소는 Swift 언어를 탐구하고 깊이 있는 학습을 진행하기 위한 공간입니다. 
 Obsidian을 활용하여 학습한 내용을 Markdown 노트로 기록하고, GitHub를 통해 협업하여 서로의 학습을 공유하고 발전할 수 있도록 구성되었습니다.
 
-### 🪐 지금 우리는 (매주 업데이트 예정)
+### 🪐 지금 우리는 (매주 업데이트 예정) 
 <img width="1300" alt="image" src="https://github.com/user-attachments/assets/ee53a167-bd0a-4656-822b-a3548ac28a9d" />
 
 ### 👥 Team Member
-+ @nan-park 박난 니카
-+ @yijuuuun 김이준 세라
-+ @yangsijun 양시준 에어
-+ @freeskyES 천은송 원띵
-+ @whalswjd 조민정 젠
-+ @averysjung 정서진 에이버리
-+ @01sys10 소연수 노터
+<table>
+   <tr>
+      <td align="center"><a href="https://github.com/nan-park"><img src="https://avatars.githubusercontent.com/u/53233842?v=4" width="100px;" alt=""/><br /><sub><b>nan-park<br/>(Nan Park)</b></sub></a></td>
+      <td align="center"><a href="https://github.com/yijuuuun"><img src="https://avatars.githubusercontent.com/u/166994072?v=4" width="100px;" alt=""/><br /><sub><b>yijuuuun<br/>(Yijun Kim)</b></sub></a></td>
+      <td align="center"><a href="https://github.com/yangsijun"><img src="https://avatars.githubusercontent.com/u/17348379?v=4" width="100px;" alt=""/><br /><sub><b>yansijun<br/>(Sijun Yang)</b></sub></a></td>
+      <td align="center"><a href="https://github.com/freeskyES"><img src="https://avatars.githubusercontent.com/u/19375957?v=4" width="100px;" alt=""/><br /><sub><b>freeskyES<br/>(Eunsong Cheon)</b></sub></a></td>
+      <td align="center"><a href="https://github.com/whalswjd"><img src="https://avatars.githubusercontent.com/u/160840239?v=4" width="100px;" alt=""/><br /><sub><b>whalswjd<br/>(Minjeong Cho)</b></sub></a></td>
+      <td align="center"><a href="https://github.com/jwithhama"><img src="https://avatars.githubusercontent.com/u/206078083?v=4" width="100px;" alt=""/><br /><sub><b>jwithhama<br/>(Juham Lee)</b></sub></a></td>
+      <td align="center"><a href="https://github.com/yeonsooSo"><img src="https://avatars.githubusercontent.com/u/65909443?v=4" width="100px;" alt=""/><br /><sub><b>01sys10<br/>(Yeonsoo So)</b></sub></a></td>
+   </tr>
+</table>
 
-- 그룹장은 매주 돌아가며 변경될 수 있으며, 새로운 주차마다 학습 주제를 지정할 수 있습니다.
+- 그룹장은 위 순서대로 매주 변경되며, 새로운 주차마다 학습 주제를 지정할 수 있습니다.
 - 팀원들은 PR을 통해 학습 내용을 공유하고, 서로의 노트를 리뷰하며 피드백을 제공할 수 있습니다.
 
 ## 🚀 시작하기
