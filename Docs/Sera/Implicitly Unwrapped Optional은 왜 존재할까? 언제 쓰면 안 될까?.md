@@ -60,3 +60,5 @@ class MyViewController: UIViewController {
 
 - [https://zeromin-code.tistory.com/157](https://zeromin-code.tistory.com/157)
 - [https://uv0lpurmoon.tistory.com/16](https://uv0lpurmoon.tistory.com/16)
+
+#Sera
