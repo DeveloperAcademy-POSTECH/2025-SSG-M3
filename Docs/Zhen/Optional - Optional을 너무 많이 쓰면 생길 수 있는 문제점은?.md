@@ -69,7 +69,7 @@ func fetchData() -> Result<String, NetworkError> {
 
 
 ## Keywords
-+ [[옵셔널(Optionals)]]
++ [[옵셔널 (Optionals)]]
 
 ## References
 - Blog

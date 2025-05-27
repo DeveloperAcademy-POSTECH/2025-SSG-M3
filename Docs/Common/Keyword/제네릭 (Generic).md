@@ -1,0 +1,8 @@
+>[!question]
+>GQ1. [[Generic - Swift는 왜 제네릭을 도입했을까? 구체적인 필요 상황은?]]
+>GQ2. [[Generic - 제네릭이 코드 재사용성과 타입 안정성에 어떻게 기여할까?]]
+>GQ3. [[Generic - Generic과 Protocol with Associated Type은 어떤 차이가 있을까?]]
+>GQ4. [[Generic - where 절을 쓰지 않고도 제네릭 제약을 구현할 수 있을까?]]
+>GQ5. [[Generic - 함수 제네릭과 제네릭 구조체, 클래스의 차이점]]
+>GQ6. [[Generic - Type Erasure는 왜 필요하고, 언제 써야 할까?]]
+>GQ7. [[Generic - 제네릭으로 인한 컴파일 시간 증가나 복잡도 문제는 없을까?]]

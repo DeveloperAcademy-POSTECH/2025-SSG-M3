@@ -1,0 +1,8 @@
+>[!question]
+>GQ1. [[Optional - Swift는 왜 Optional이라는 개념을 언어 레벨에서 강제했을까?]]
+>GQ2. [[Optional - Optional이 없는 언어(Java 등)에서는 null을 어떻게 다루고 있을까?]]
+>GQ3. [[Optional - Optional Chaining과 guard let 중 어떤 상황에서 무엇을 써야 할까?]]
+>GQ4. [[Optional - Implicitly Unwrapped Optional은 왜 존재할까? 언제 쓰면 안 될까?]]
+>GQ5. [[Optional - 메모리에 실제로 어떻게 저장되고 처리될까?]]
+>GQ6. [[Optional - Optional을 너무 많이 쓰면 생길 수 있는 문제점은?]]
+>GQ7. [[Optional - nil이 Optional.none이라는 표현으로 추상화된 이유는 뭘까?]]

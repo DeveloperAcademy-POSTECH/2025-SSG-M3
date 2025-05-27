@@ -212,7 +212,7 @@ func add<T>(_ item: T = 0) {
 ~~~
 
 ## Keywords
-+[[프로토콜 지향 프로그래밍 (POP)]]
++[[Docs/Common/Keyword/프로토콜 지향 프로그래밍 (POP)]]
 +[[제네릭 (Generic)]]
  
 ## References
@@ -222,3 +222,5 @@ func add<T>(_ item: T = 0) {
 	- https://mojitobar.tistory.com/9
 - Apple 의 공식 문서 
 	- https://docs.swift.org/swift-book/documentation/the-swift-programming-language/protocols/
+
+#Zhen

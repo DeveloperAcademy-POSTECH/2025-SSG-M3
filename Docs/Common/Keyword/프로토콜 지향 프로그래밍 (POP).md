@@ -1,0 +1,8 @@
+>[!question]
+>GQ1. [[POP - Swift가 Protocol-Oriented를 강조한 이유는 무엇일까?]]
+>GQ2. [[POP - POP은 OOP(Object-Oriented)와 어떤 점에서 철학이 다를까?]]
+>GQ3. [[POP - 왜 Swift는 다중 상속 대신 프로토콜 조합 방식을 택했을까?]]
+>GQ4. [[POP - Protocol Extension은 어떻게 코드 중복을 줄이고 있을까?]]
+>GQ5. [[POP - Testability에 어떻게 기여할까?]]
+>GQ6. [[POP - POP을 사용할 때 오히려 구조가 복잡해지는 경우는 언제일까?]]
+>GQ7. [[POP - Protocol이 아닌 Class를 써야만 하는 케이스는 어떤 게 있을까?]]
