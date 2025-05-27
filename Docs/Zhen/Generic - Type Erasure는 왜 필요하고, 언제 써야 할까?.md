@@ -73,7 +73,7 @@ for animal in animals {
 
 
 ## Keywords
-+ [[프로토콜 지향 프로그래밍 (POP)]]
++ [[Docs/Common/Keyword/프로토콜 지향 프로그래밍 (POP)]]
 - [[제네릭 (Generic)]]
 ## References
 - Apple 공식 문서: Protocols - Swift Language Guide
