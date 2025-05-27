@@ -80,3 +80,5 @@ for animal in animals {
 - [WWDC 2015 - Protocol-Oriented Programming in Swift](https://developer.apple.com/videos/play/wwdc2015/408/)
 - [Swift Evolution Proposal: Type Erasure](https://github.com/apple/swift-evolution/blob/main/proposals/0309-unseal-anyhashable.md)
 - Swift Forums: Type Erasure Patterns
+
+#Zhen
