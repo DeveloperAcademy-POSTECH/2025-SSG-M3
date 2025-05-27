@@ -47,3 +47,5 @@ func someFunction<T: SomeClass, U: SomeProtocol>(someT: T, someU: U) {
 ## References
 
 - [https://docs.swift.org/swift-book/documentation/the-swift-programming-language/generics#Type-Constraints](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/generics#Type-Constraints)
+
+#Sera 
