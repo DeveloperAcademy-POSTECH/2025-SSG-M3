@@ -191,8 +191,7 @@ Task {
 **기능을 조립하듯 설계하고, 더 유연하고 안전한 코드를 만들기 위한 철학!**
 
 
-
 ## Keyword
-- [[Docs/Common/Keyword/프로토콜 지향 프로그래밍 (POP)]]
+- [[Docs/Common/Keyword/프로토콜 지향 프로그래밍 (POP)|프로토콜 지향 프로그래밍 (POP)]]
 
 #Noter
