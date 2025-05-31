@@ -128,6 +128,6 @@ await MainActor.run {
 ---
 ## Keyword
 
-- [[Docs/Common/Keyword/MainActor]]
+- [[병렬 처리(Swift-Concurrency)]]
 
 #Noter
