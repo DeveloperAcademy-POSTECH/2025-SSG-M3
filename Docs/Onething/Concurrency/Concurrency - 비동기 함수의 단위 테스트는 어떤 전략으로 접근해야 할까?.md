@@ -117,6 +117,91 @@ func test_asyncOperation_withExpectation() {
 단, 이 방식은 async/await보다는 복잡하고, 테스트 코드가 지저분해질 수 있다.
 → **가능하다면 구조 자체를 async/await으로 바꾸는 리팩터링도 고려할 만하다.**
 
+---
+
+## **@Published + Combine을 활용한 상태 검증 전략**
+
+SwiftUI나 MVVM 환경에서는 @Published로 선언된 프로퍼티를 통해 ViewModel의 상태를 외부에서 관찰할 수 있다.
+이를 통해 비동기 함수 실행 후의 상태 변화를 테스트 코드에서 직접 구독하고 검증할 수 있다
+
+### **언제 유용할까?**
+- loadData()와 같은 비동기 함수 실행 이후, 특정 상태 변화가 발생하는지를 확인하고 싶을 때
+- ViewModel 내부 상태가 비동기 흐름에 따라 여러 번 바뀌는 경우
+
+```swift
+func test_loadingState_isUpdated() {
+    let viewModel = MyViewModel()
+    var states: [LoadingState] = []
+
+    let cancellable = viewModel.$state
+        .sink { state in
+            states.append(state)
+        }
+
+    viewModel.loadData()
+
+    // 비동기 작업 이후에도 일정 시간 기다려줘야 함
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        XCTAssertEqual(states, [.idle, .loading, .success])
+    }
+
+    cancellable.cancel()
+}
+```
+→ viewModel.loadData()라는 **비동기 로직을 호출한 후**,
+ViewModel의 state 값이 .idle → .loading → .success 순서로 잘 바뀌는지를 검증하려는 것이다.
+
+#### 동작 원리
+### **1.**  **@Published + Combine = 관찰 가능한 상태**
+```swift
+let cancellable = viewModel.$state
+    .sink { state in
+        states.append(state)
+    }
+```
+- @Published var state: LoadingState는 내부 상태가 바뀔 때마다 Combine의 **Publisher** 역할을 한다.
+- viewModel.$state는 Combine의 **Published.Publisher**이다.
+- 여기에 .sink를 붙이면, 상태가 바뀔 때마다 콜백이 호출된다.
+    즉, states 배열에 상태 변화 기록을 하나씩 쌓아가고 있는 것이다.
+→ **Combine은 여기서 @Published를 구독하고 상태 흐름을 기록하는 데 사용된다.**
+
+
+### **2. 상태 흐름 전체를 기록한다**
+
+```swift
+var states: [LoadingState] = []
+```
+- .sink 구독으로 인해 state의 변화를 순차적으로 states에 누적시킨다.
+- 예를 들어,
+    - 테스트 시작 시 초기값 .idle
+    - loadData() 호출 → .loading
+    - 네트워크 성공 → .success
+        이런 흐름을 **배열로 쌓아서 나중에 통째로 비교**하는 전략이다.
+
+이 방식은 상태 변화가 연속적으로 일어날 때 유용하다. 중간 상태도 모두 확인할 수 있다.
+
+### **3. 검증 타이밍을 맞춰야 한다**
+```swift
+DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+    XCTAssertEqual(states, [.idle, .loading, .success])
+}
+```
+- 비동기 작업은 시간차를 두고 완료되므로, **바로 비교하면 안 된다**.
+- asyncAfter를 써서 약간 기다린 후 XCTAssertEqual로 검증한다.
+- 이건 테스트 흐름에서 **비동기 타이밍을 수동으로 맞추는 기법**이다.
+
+하지만 이 방식은 테스트 코드가 깔끔하지 않고,
+→ 보통은 XCTestExpectation이나 await을 쓰는 구조로 리팩터링하는 것이 더 좋다.
+
+
+#### 정리
+UI와 ViewModel 사이의 반응형 상태 바인딩을 그대로 테스트에서도 가져온 방식이다.
+**Combine을 활용하면 state의 변화를 시간순으로 추적 가능**하고,
+테스트에서는 이 흐름을 통해 앱의 상태 전이 로직이 **정확히 구현되었는지**를 확인할 수 있다.
+
+다만, DispatchQueue.main.asyncAfter와 같은 임시 대기 전략보다는
+XCTestExpectation, 혹은 async/await 기반의 테스트 리팩터링을 통해 **보다 신뢰도 높은 테스트**를 만드는 것이 장기적으로 중요하다.
+
 
 ---
 
