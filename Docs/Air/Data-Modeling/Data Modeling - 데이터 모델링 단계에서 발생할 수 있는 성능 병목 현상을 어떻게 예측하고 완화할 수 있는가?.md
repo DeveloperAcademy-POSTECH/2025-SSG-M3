@@ -6,7 +6,7 @@
 
 ## 주요 기능
 #### 1. 조인 비용 최소화
-- 관계형 모델에서 Many-To-Many 혹은 깊은 관계 트리 접근 시 N+1 문제 방지
+- 관계형 모델에서 One-To-Many, Many-To-Many 혹은 깊은 관계 트리 접근 시 N+1 문제 방지
 	- N+1 문제
 		- 데이터베이스에서 자주 발생하는 비효율적인 쿼리 패턴
 		- 하나의 쿼리를 실행한 추가적으로 N개의 쿼리가 각각 실행되어 총 N+1개의 쿼리가 발생하는 상황
@@ -67,7 +67,7 @@ do {
 
 #### 3. 배치 Fetch와 메모리 관리
 ```Swift
-request.fetchBatchSize = 50}
+request.fetchBatchSize = 50
 ```
 - `fetchBatchSize`: 한 번에 메모리에 로드할 갯수 지정 -> 메모리 절약, 성능 향상
 ```Swift
