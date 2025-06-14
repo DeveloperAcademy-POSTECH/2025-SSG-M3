@@ -55,6 +55,7 @@ print(precomposed == decomposed) // true
 - 표현에 따라 Byte 수도 다르다.
 
 ## Keywords
+- [[Swift Standard Library]]
 + [[String]]
 
 ## 작성자
