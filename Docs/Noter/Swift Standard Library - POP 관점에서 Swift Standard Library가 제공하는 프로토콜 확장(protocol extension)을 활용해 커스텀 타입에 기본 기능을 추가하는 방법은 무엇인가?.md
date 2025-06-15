@@ -14,7 +14,7 @@
 - 덕분에 모든 conforming 타입\*에 대해 **기본 구현(default implementation)**을 제공 가능.
 - 클래스 상속보다 더 가볍고 유연하게 "공통 기능"을 구성할 수 있다.
 
-<span style="color:gray">  \* conforming 타입: 어떤 프로토콜을 따르는(채택한) 타입 <\span>
+<span style="color:gray">  \* conforming 타입: 어떤 프로토콜을 따르는(채택한) 타입 </span>
 
 ### 1. 개요
 
