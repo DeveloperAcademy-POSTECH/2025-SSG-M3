@@ -106,6 +106,40 @@ func load(onLoaded: @escaping () -> Void) {
 }
 ```
 
+```swift
+// View.swift
+
+struct MyView: View {
+
+    @StateObject var viewModel = MyViewModel()
+
+  
+
+    var body: some View {
+
+        VStack {
+
+            Text("Hello")
+
+  
+
+            Button("Load") {
+
+                // ✅ 외부에서 클로저를 직접 정의하고 넘겨줌
+
+                viewModel.load {
+
+                    print("Loaded from View")
+
+                }x
+
+            }
+
+        }
+
+    }
+```
+
 → 이렇게 하면 ViewModel 내부에 클로저가 들어가지 않기 때문에 순환 참조가 아예 생기지 않아,
 **역할을 분리하는 좋은 방식**이다.
 
