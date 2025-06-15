@@ -166,6 +166,10 @@ Swift는 이를 통해 **안전하고 선언적인 에러 방어 설계**를 가
 
 ---
 
+### GQ
+- flatMap과 compactMap은 내부적으로 어떤 차이를 가지고 있을까?
+
+---
 ### Keywords
 - [[Swift Standard Library]]
 - [[옵셔널 (Optionals)]]
