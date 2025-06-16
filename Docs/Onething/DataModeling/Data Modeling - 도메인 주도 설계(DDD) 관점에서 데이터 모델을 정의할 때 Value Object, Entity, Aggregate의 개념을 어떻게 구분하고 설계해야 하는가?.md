@@ -89,3 +89,41 @@ Order는 Aggregate Root이고, OrderItem, Address는 내부 구성 요소이다.
 → 외부에서 OrderItem을 직접 수정하지 않고, Order의 메서드를 통해 수정해야 한다.
 → 이렇게 해야 **비즈니스 규칙(예: 주문은 반드시 하나 이상의 상품을 포함해야 함)**을 Root에서 통제할 수 있다.
 
+---
+
+#### Aggregate는 트랜잭션 경계이다
+- 단일 Aggregate 내부의 변경은 한 트랜잭션에서 이뤄져야 한다.
+- 다른 Aggregate를 변경해야 한다면, 이벤트 발행 또는 명시적 커뮤니케이션을 고려해야 한다.
+- 하나의 요청에서 하나의 Aggregate만 변경하는 게 기본 원칙이다.
+
+#### 명시적 커뮤니케이션 방식
+- 직접 다른 Aggregate를 건드리지 않고,
+  **도메인 서비스 또는 Application Layer에서 호출**로 처리한다.
+
+```swift
+// Application Service
+func completeOrderAndTriggerPayment(orderId: UUID) {
+    let order = orderRepository.findById(orderId)
+    order.complete()
+
+    let payment = paymentRepository.findByOrderId(orderId)
+    payment.prepare()
+}
+```
+→ Aggregate는 **오직 자기 책임만** 수행하고,
+외부와의 조율은 도메인 서비스 같은 **상위 계층**에서 담당하게 하는 방식.
+
+
+---
+
+### GQ
+- Aggregate 간 관계는 어떤 방식으로 연결해야 할까?
+- Entity의 변경 이력을 추적하고 싶을 때 어떤 설계가 필요할까?
+
+---
+### Keywords
+- [[데이터 모델링 (Data Modeling)]]
+- DDD
+
+### 작성자
+- #Onething 
