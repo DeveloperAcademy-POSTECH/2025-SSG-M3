@@ -5,7 +5,7 @@ Swift Study Group에 오신 것을 환영합니다! 🤗
 Obsidian을 활용하여 학습한 내용을 Markdown 노트로 기록하고, GitHub를 통해 협업하여 서로의 학습을 공유하고 발전할 수 있도록 구성되었습니다.
 
 ### 🪐 지금 우리는 (매주 업데이트 예정) 
-<img width="1300" alt="image" src="https://github.com/user-attachments/assets/ee53a167-bd0a-4656-822b-a3548ac28a9d" />
+<img width="932" alt="스크린샷 2025-06-15 18 44 28" src="https://github.com/user-attachments/assets/120d0342-78cc-4a66-9b65-b9bb17199e4e" />
 
 ### 👥 Team Member
 <table>
