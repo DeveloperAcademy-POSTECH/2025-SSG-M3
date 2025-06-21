@@ -1,5 +1,5 @@
 >[!question]
->GQ1. GQ를 쓰세요
+>GQ1. [[Swift Standard Library - 대규모 배열 혹은 딕셔너리 데이터를 처리할 때 `map`, `filter`, `reduce`를 활용하여 성능과 메모리를 최적화하려면 어떻게 설계해야 할까?]]
 >GQ2. GQ를 쓰세요
 
 ## Description
