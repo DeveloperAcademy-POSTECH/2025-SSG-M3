@@ -48,21 +48,47 @@ Target Triple은 LLVM이 **어떤 플랫폼용 코드**를 생성할지를 결�
 ---
 
 ## 3. LLVM에서의 플랫폼별 코드 생성 흐름
-1. **Frontend** 단계  
-   - 예: Swift → SIL / C → LLVM IR  
-   - 이 단계에서 언어 자체 문법을 파싱하고 중간 표현으로 변환한다.
+1. **Frontend** 단계 – 언어 종속적 파싱 및 IR 생성
+   - 이 단계에서는 **고수준 언어(C, Swift, Rust 등)** 의 문법을 해석하여, LLVM이 이해할 수 있는 중간 표현(IR, Intermediate Representation)으로 변환한다.
+   - 예: 
+	   - Swift → SIL → LLVM IR  
+	   - C → LLVM IR
+   - 중요한 점은, 이 단계는 언어별로 커스터마이징되어 있지만, **출력은 모두 LLVM IR로 통일**된다는 것.
 
-2. **Target 설정**  
+2. **Target 설정** – Triple에 기반한 백엔드 준비
+   - --target=... 옵션이 여기에 적용된다.
+   - 컴파일러는 이 정보를 사용해 해당 플랫폼에 맞는:
+    - **데이터 레이아웃**
+	- **호출 규약**
+	- **기계어 특성**
+	를 고려하며, **IR 최적화 및 코드 생성 전략을 조정**한다.
+	- 예를 들어 x86_64-apple-darwin과 x86_64-pc-linux-gnu는 아키텍처는 같지만 OS에 따라 다르게 처리됨.
    - 컴파일 타겟을 명시 (`--target=x86_64-apple-darwin`)  
    - 이 정보를 기반으로 IR이 최적화되고 기계어로 내려갈 준비를 한다.
+  
+3. **Mid-end – 최적화 패스 적용**
+- LLVM은 수십 개의 최적화 패스를 갖고 있으며, 이를 통해 IR을 더욱 효율적인 형태로 변환한다.
+- 예: dead code 제거, loop unrolling, inlining, constant folding
+- 이때도 타겟 정보가 일부 최적화에 영향을 줄 수 있음.
+	- 예: 특정 아키텍처에서는 루프 언롤링이 더 유리할 수도 있음.
 
-3. **Backend CodeGen**  
-   - 각 아키텍처별로 존재하는 코드 생성기(Code Generator)가 해당 IR을 변환한다.  
-   - 이 때 호출 규약, 레지스터 할당, 스택 프레임 레이아웃 등이 타겟에 맞게 처리된다.
+4. **Backend CodeGen**  -  **IR을 기계어로 변환** 
+   - IR이 기계어로 변환되는 단계.
+   - Target Triple에 따라 해당 플랫폼에 맞는 **Code Generator**가 선택된다. 
+   - 이 과정에서 다음이 고려됨:
+       - 호출 규약(Calling Convention)
+       - 레지스터 할당
+       - 스택 프레임 구조
+       - 명령어 셋 (예: SSE, NEON)
+   - 예: arm64에서는 LR, X0~X30 레지스터를 쓰는 식.
 
-4. **Linker 및 ABI 처리**  
-   - 생성된 오브젝트 파일이 링커에 의해 OS에 맞게 묶인다.  
-   - 환경에 따라 `glibc`, `musl`, `CoreFoundation` 등 ABI 차이도 고려된다.
+5. **Linker 및 ABI 처리**  
+   - 생성된 오브젝트 파일은 **링커**에 의해 실제 실행 가능한 바이너리로 묶인다.
+   - OS 및 환경에 따라:
+	   - 라이브러리 링크 규칙 (예: .dylib, .so, .dll)
+	   - ABI(Application Binary Interface)
+	   - 런타임 의존성(CoreFoundation, glibc 등)
+	 가 모두 달라지므로, Target Triple은 이 단계에서도 중요하게 작용한다.
 
 ---
 
@@ -75,4 +101,13 @@ swift build --target x86_64-apple-macosx13.0
 
 Swift는 기본적으로 macOS, iOS, Linux, Windows 등을 타겟으로 하고, 플랫폼 간의 차이를 LLVM Target Triple로 구분한다.
 
+---
 
+## GQ
+- **LLVM의 IR(Intermediate Representation)은 어떤 구조를 가지며, 최적화 과정에서 어떤 방식으로 변환 및 분석이 이루어지는가?**
+
+## Keywords
+- [[LLVM 컴파일러]]
+
+
+#Onething 
