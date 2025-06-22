@@ -2,7 +2,7 @@
 > [!question]  
 > GQ. 정규화된 모델을 역정규화(denormalization)하여 성능을 개선할 때, 데이터 무결성과 중복 데이터를 관리하기 위한 전략은 무엇인가?
 
-### **0. 키워드 개념 정리**
+### 0. 키워드 개념 정리
 
  **1) 정규화 (Normalization)**
 
@@ -171,9 +171,10 @@ SELECT content, username FROM posts
 
 ---
 
-## Keyword
+### Keyword
 
 - [[데이터 모델링 (Data Modeling)]]
 
+### 작성자
 
 #Noter
