@@ -4,13 +4,13 @@
 ## Description
 - Swift Standard Library는 Swift 프로그래밍 언어의 핵심 기능들을 제공하는 기본 도구 상자임. 이거 없으면 print문도 사용할 수 없고 하나하나 구현해야함
 - Sequence와 Collection 둘 다 Swift에서 반복 가능한 타입들을 정의하는 프로토콜(요소들의 집합을 다룸)
-- Sequence는 한번만 순회 가능하고 인덱스 기반 접근이 불가하다. 그에 비해 Collection은 여러 번 순회 가능하고 인덱스 기반 접근이 가능하다.  Sequence를 상속받은게 Collection이다.
+- Sequence는 한번만 순회 가능하고 인덱스 기반 접근이 불가하다. 그에 비해 Collection은 여러 번 순회 가능하고 인덱스 기반 접근이 가능하다.  Sequence를 상속받은게 Collection이다. (상속 관계가 이상한거 같은디..)
 - 
 
 ## 주요 기능
 + ###  Sequence
 - 한 번만 순회하고 끝나는 데이터 흐름이다. 
-- Sequence는 반드시 여러 번 순회 가능한 걸 보장하지 않음.
+- Sequence는 여러 번 순회 가능한 걸 보장하지 않음.
 - 예: 파일 읽기, 네트워크 스트림, 입력 스트림처럼 **한 번만 읽고 처리해야 하는 데이터**에 적합함
 - `Sequence`는 무한 시퀀스를 만들고 일부만 꺼내 쓸 때 유용함
 
@@ -36,6 +36,7 @@ let input = sequence(first: 1) { $0 < 10 ? $0 + 1 : nil }
 for num in input {
     print(num) // 1~10 출력
 }
+
 // 여기서 다시 반복문을 돌리면 동작하지 않음
 
 ```
