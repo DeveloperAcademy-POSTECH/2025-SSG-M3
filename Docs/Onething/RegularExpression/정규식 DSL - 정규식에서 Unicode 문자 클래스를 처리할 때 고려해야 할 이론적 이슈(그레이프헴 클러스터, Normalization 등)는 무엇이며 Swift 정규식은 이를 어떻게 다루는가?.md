@@ -15,10 +15,11 @@ ASCII 문자만 다루던 시절의 정규식은 "한 글자 = 한 바이트 = �
 Swift에서도 `Character`는 유니코드 스칼라가 아니라 이 Grapheme Cluster를 기준으로 동작한다.
 예를 들어:
 ```swift
-let a1 = "á" // 'a' + 'Combining Acute Accent'
-let a2 = "á"  // 단일 문자 (precomposed)
+let a1 = "a\u{0301}" // 'a' + Combining Acute Accent (U+0301)
+let a2 = "\u{00E1}"  // 'á' precomposed (U+00E1)
 print(a1.count) // 1
 print(a2.count) // 1
+print(a1 == a2) // false
 ```
 정규식에서도 단순히 ., \w, . 등의 패턴으로는 Grapheme Cluster를 정확히 처리하지 못할 수 있다.
 왜냐하면 .는 기본적으로 유니코드 스칼라 단위로 동작하고, 조합 문자는 둘 이상의 스칼라로 이루어질 수 있기 때문이다.
