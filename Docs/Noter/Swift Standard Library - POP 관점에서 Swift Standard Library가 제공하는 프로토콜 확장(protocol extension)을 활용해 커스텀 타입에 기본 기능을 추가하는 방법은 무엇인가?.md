@@ -117,10 +117,12 @@ Swift 프로그래밍 시 커스텀 타입을 설계할 때도 이 방식을 적
 
 ---
 
-## Keyword
+### Keyword
 
 - [[Swift Standard Library]]
 - [[프로토콜 지향 프로그래밍 (POP)]]
     
+
+### 작성자
 
 #Noter
