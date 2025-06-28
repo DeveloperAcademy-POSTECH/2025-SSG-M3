@@ -30,7 +30,7 @@ text.wholeMatch(of: regex) // 매칭 결과는 "bar"
 ```
 
 ## Keywords
-+ regex
++ [[정규식 DSL]]
 
 ## 작성자
-- Hama
+- #Hama 

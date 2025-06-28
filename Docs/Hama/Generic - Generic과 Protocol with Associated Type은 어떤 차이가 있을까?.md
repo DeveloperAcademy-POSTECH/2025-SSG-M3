@@ -10,7 +10,6 @@
 함수나 타입을 사용할 때, 자유롭게 타입이 정해진다.
 
 - 예시
-    
 ```swift
 func wrapGift<T>(_ gift: T) {
 	print("🎁 \\(gift) 포장 완료!")
@@ -20,9 +19,8 @@ wrapGift("사과")       // 🎁 사과 포장 완료!
 wrapGift(123)         // 🎁 123 포장 완료!
 wrapGift(["책", "펜"]) // 🎁 ["책", "펜"] 포장 완료!
 ```
-    
-    이렇게 사용하는 입장에서, 타입이 자유롭게 정해지는 것을 볼 수 있다.
-    
+
+이렇게 사용하는 입장에서, 타입이 자유롭게 정해지는 것을 볼 수 있다.
 
 ### PAT(**Protocol with Associated Type)**
 
@@ -41,14 +39,10 @@ struct IntContainer: Container {
 	    // 여기서 Item == Int
 }
 ```
-    
-    이렇게 프로토콜에서 associatedtype 으로 타입을 ‘미정의’ 해두면, IntContainer 에서 Int 로 타입을 정해 사용하는 것을 볼 수 있다.
-    
 
----
+이렇게 프로토콜에서 associatedtype 으로 타입을 ‘미정의’ 해두면, IntContainer 에서 Int 로 타입을 정해 사용하는 것을 볼 수 있다.
 
 GQ: 만약, asscoiatedtype 를 안쓰면 어떻게되나요?
-
 GA: 타입이 고정이 되어서, 다른 타입으로 사용할 수 없습니다.
 
 ```swift
@@ -82,5 +76,6 @@ func sayHello(name: String) {
 sayHello(name: "Hama")
 ```
 
+[[제네릭 (Generic)]]
 
 #Hama
