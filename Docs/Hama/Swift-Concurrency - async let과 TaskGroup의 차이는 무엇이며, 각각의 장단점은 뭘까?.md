@@ -106,9 +106,7 @@ func loadImages() async {
 때문에 초보자에게 생소하며, 익숙하지 않으면 헷갈릴 수 있다.
 
 ## Keywords
-+ async let
-+ TaskGroup
-+ await
+[[병렬 처리(Swift-Concurrency)]]
 
 ## 작성자
-- Hama
+- #Hama 
