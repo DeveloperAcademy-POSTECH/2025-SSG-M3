@@ -49,5 +49,6 @@ func sendEmail(to user: User?) {
 
 user 안에 profile이 있고, profile 안에 email이 있을 때만 그 email을 사용해서 아래 로직을 실행하고, 그렇지 않으면 함수에서 나가겠다(return) 는 뜻입니다.
 
+[[옵셔널 (Optionals)]]
 
 #Hama 
