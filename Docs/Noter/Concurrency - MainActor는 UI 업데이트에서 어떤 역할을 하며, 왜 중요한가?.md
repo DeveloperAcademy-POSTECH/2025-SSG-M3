@@ -129,5 +129,8 @@ await MainActor.run {
 ## Keyword
 
 - [[병렬 처리(Swift-Concurrency)]]
+- [[MainActor]]
+
+## 작성자
 
 #Noter
