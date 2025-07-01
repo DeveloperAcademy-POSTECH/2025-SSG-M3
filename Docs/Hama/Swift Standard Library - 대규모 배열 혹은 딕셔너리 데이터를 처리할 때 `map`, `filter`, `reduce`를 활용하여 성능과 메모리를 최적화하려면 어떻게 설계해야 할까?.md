@@ -116,3 +116,7 @@ let newArray = numbers.reduce([]) { $0 + [$1 * 2] }
 //  데이터 축적은 map에게 맡기세요. reduce는 데이터 축적할 때는 느릴뿐 아니라 메모리 낭비.
 //  그렇지만, 모든 숫자의 합, 가장 큰 수 이렇게 하나의 값을 뽑아낼때 reduce가 최고입니다.
 ```
+
+[[Swift Standard Library]]
+
+#Hama 

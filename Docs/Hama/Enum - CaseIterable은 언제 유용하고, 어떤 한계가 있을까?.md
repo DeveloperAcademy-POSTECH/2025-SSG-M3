@@ -73,15 +73,10 @@ print(names)
 // 출력: ["사과", "바나나", "포도"]
 ```
 ## Keywords
-* enum
-+ caseIterable
-* .allCases
-* .map
-* .joined
-* switch
+* [[열거형 (Enumeration)]]
 
 ## References
 - https://developer.apple.com/documentation/swift/caseiterable/ (Apple의 공식 문서)
 
 ## 작성자
-* Hama
+* #Hama 
