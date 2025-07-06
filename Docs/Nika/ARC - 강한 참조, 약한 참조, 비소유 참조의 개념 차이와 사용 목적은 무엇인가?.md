@@ -83,7 +83,7 @@ unit4A!.tenant = john
 // Apartment 4A is being initialized
 ```
 
-john은 unit4A를, unit4A는 john을, 즉 **두 인스턴스가 서로를 강하게 참조한다.** 각 인스턴스는 참조하는 곳이 2개로 카운트된다.![[스크린샷 2025-07-06 오후 8.31.16.png]]
+john은 unit4A를, unit4A는 john을, 즉 **두 인스턴스가 서로를 강하게 참조한다.** 각 인스턴스는 참조하는 곳이 2개로 카운트된다.
 
 
 ```swift
@@ -114,7 +114,7 @@ class Apartment {
 ```
 
 다음과 같이 Apartment 클래스의 tenant 변수를 weak var로 만들었다.
-![[스크린샷 2025-07-06 오후 8.31.32.png]]
+
  그러면 tenant 변수는 Person 인스턴스를 약하게 참조한다. 이는 Person 인스턴스의 참조 카운트를 증가시키지 않는다.
 
 ```swift
@@ -122,9 +122,7 @@ john = nil
 // John is being deinitialized
 ```
 
-Person 인스턴스는 john 변수에 의한 강한 참조만 없어지면(-1) ARC에 의해서 자동으로 메모리 할당이 해제된다.
-![[스크린샷 2025-07-06 오후 8.31.49.png]]
- Person 인스턴스에서 나온 강한 참조 또한 사라졌기 때문에, Apartment 인스턴스도 unit4A 변수에 의한 강한 참조만 사라지면 할당이 해제될 것이다.
+Person 인스턴스는 john 변수에 의한 강한 참조만 없어지면(-1) ARC에 의해서 자동으로 메모리 할당이 해제된다. Person 인스턴스에서 나온 강한 참조 또한 사라졌기 때문에, Apartment 인스턴스도 unit4A 변수에 의한 강한 참조만 사라지면 할당이 해제될 것이다.
 
 ```swift
 unit4A = nil
