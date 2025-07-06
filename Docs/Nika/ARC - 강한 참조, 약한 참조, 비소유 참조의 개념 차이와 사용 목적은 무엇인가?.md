@@ -9,10 +9,10 @@ class Person {
 	let name: String
 	init(name: String) {
 		self.name = name
-		print("\\\\(name) is being initialized")
+		print("\(name) is being initialized")
 	}
 	deinit {
-		print("\\\\(name) is being deinitialized")
+		print("\(name) is being deinitialized")
 	}
 }
 ```
@@ -60,14 +60,14 @@ class Person {
 	let name: String
 	init(name: String) { self.name = name }
 	var apartment: Apartment?
-	deinit() { print("\\\\(name) is being deinitialized") }
+	deinit() { print("\(name) is being deinitialized") }
 }
 
 class Apartment {
 	let unit: String
 	init(unit: String) { self.unit = unit }
 	var tenant: Person?
-	deinit() { print("Apartment \\\\(unit) is being deinitialized") }
+	deinit() { print("Apartment \(unit) is being deinitialized") }
 }
 
 var john: Person?
@@ -102,14 +102,14 @@ class Person {
 	let name: String
 	init(name: String) { self.name = name }
 	var apartment: Apartment?
-	deinit() { print("\\\\(name) is being deinitialized") }
+	deinit() { print("\(name) is being deinitialized") }
 }
 
 class Apartment {
 	let unit: String
 	init(unit: String) { self.unit = unit }
 	weak var tenant: Person?
-	deinit() { print("Apartment \\\\(unit) is being deinitialized") }
+	deinit() { print("Apartment \(unit) is being deinitialized") }
 }
 ```
 
