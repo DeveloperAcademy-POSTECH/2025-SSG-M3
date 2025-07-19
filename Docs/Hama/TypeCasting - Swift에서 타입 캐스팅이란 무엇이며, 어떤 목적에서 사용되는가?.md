@@ -75,5 +75,8 @@ if let realApple = fruit as? Apple {
 }
 ```
 
+## Keywords
++ [[타입 캐스팅 (Type Casting)]]
+
 ## 작성자
 - #Hama 
