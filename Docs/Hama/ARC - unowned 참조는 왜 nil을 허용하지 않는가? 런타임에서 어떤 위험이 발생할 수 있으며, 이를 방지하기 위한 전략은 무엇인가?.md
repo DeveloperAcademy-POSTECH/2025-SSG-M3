@@ -59,5 +59,8 @@ john = nil
 	- GA3. unowned 는 **“참조 대상 객체의 수명이, 반드시 자신보다 길거나 동일하다”** 는 전제가 있을 때만 안전합니다.
 	  이 전제가 깨지면 앱 크래시가 발생되어 치명적입니다. 때문에 unowned 는 꼭 필요한 경우에만 신중히 사용해야 합니다.
 
+## Keywords
++ [[ARC (Automatic Reference Counting)]]
+
 ## 작성자
 #Hama 
