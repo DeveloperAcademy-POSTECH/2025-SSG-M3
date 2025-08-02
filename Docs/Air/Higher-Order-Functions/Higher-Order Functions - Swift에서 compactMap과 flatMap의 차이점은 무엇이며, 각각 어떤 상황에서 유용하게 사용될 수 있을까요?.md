@@ -55,8 +55,5 @@ print(validNumbers)
 + [[compactMap]]
 + [[flatMap]]
 
-## References
-- 참고한 레퍼런스를 작성 (예 : Apple의 공식 문서)
-
 ## 작성자
-- 작성한 사람의 닉네임 (예: # Air )
+- #Air
