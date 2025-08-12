@@ -77,3 +77,46 @@ forEach는 더 선언적인 코드 스타일을 가능하게 하지만, 루프�
 > 반복문은 단순히 도구가 아니라 코드의 의도를 표현하는 언어. 의도를 가장 잘 드러내는 쪽을 선택하는 게 유지보수성의 핵심이다.
 
 
+---
+
+# 단순 합산이 아닌, 특정 키로 데이터를 그룹핑하는 복잡한 딕셔너리를 reduce로 만들려면 어떻게 코드를 구성할까?
+
+컬렉션의 데이터를 가공할 때 `reduce`는 단순한 합산 이상의 가능성을 가진다. 특히 `reduce(into:)`를 사용하면 불필요한 중간 컬렉션을 만들지 않고, 복잡한 형태의 딕셔너리로 데이터를 집계할 수 있다. 단순 합계가 아니라 키 기반 그룹핑을 할 때 이 패턴이 강력하게 빛난다.
+
+---
+
+## 1. 일반적인 reduce의 한계
+`reduce`는 불변의 누적 값을 반환하기 때문에 새로운 값을 계속 복사해가며 누적한다. 이 방식은 간단한 합산에는 적합하지만, **성능 부담**과 **구문 복잡성**이 발생할 수 있다.
+
+```swift
+let numbers = [1, 2, 3, 4, 5]
+let sum = numbers.reduce(0) { $0 + $1 } // 단순 합산
+```
+
+여기까지는 문제가 없지만, 데이터를 그룹핑하려 하면 코드가 복잡해지고 성능상 불리해진다.
+
+## **2. reduce(into:)로 상태를 직접 누적하기**
+
+reduce(into:)는 누적 변수를 inout으로 전달하기 때문에 매번 새로운 컬렉션을 복사하지 않고, 상태를 직접 변경할 수 있다. 이 점이 그룹핑 같은 복잡한 집계 작업에 적합하다.
+
+```swift
+let names = ["Anna", "Alex", "Brian", "Jack", "Jill"]
+
+let grouped = names.reduce(into: [Character: [String]]()) { result, name in
+    let firstLetter = name.first!
+    result[firstLetter, default: []].append(name)
+}
+
+print(grouped)
+// ["A": ["Anna", "Alex"], "B": ["Brian"], "J": ["Jack", "Jill"]]
+```
+
+
+
+## **4. 언제 reduce(into:)를 쓰고 언제 map이나 forEach를 쓸까?**
+
+- **reduce(into:)**: 누적되는 상태를 가진 복잡한 딕셔너리나 집계 데이터 생성 시
+- **map**: 요소를 변형하여 새로운 배열을 만들 때
+- **forEach**: 단순 반복이나 부수효과(side-effect)가 필요할 때
+    
+특히 reduce(into:)는 컬렉션을 한 번만 순회하면서 모든 집계를 끝낼 수 있다는 점에서 효율적이다.
