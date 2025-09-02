@@ -75,7 +75,8 @@ let payment2 = PaymentFactory.createPayment(type: userChoice2)
 payment2.pay(amount: 5000) // 출력: 5000원을 카카오페이로 결제합니다.
 ```
 
-### 예시 1: 상태 아이콘 뷰 팩토리
+
+### 예시 2: 상태 아이콘 뷰 팩토리
 메시지의 상태(`success`, `warning`, `error`)에 따라 적절한 아이콘을 보여주는 뷰 팩토리
 #### 1. 상태 정의 및 뷰 팩토리
 아이콘을 결정할 상태 값(`Status`)을 정의하고, 이 상태에 따라 다른 아이콘(`Image`) 뷰를 반환하는 팩토리를 만든다.
