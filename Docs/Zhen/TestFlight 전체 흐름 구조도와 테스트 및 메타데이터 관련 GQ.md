@@ -7,7 +7,6 @@
 >GQ5. 개발(Development) 프로비저닝 프로파일과 배포(Distribution) 프로비저닝 프로파일의 차이점은?
 >GQ6. Xcode의 “Automatically manage signing” 기능이 프로비저닝 프로파일 생성·갱신을 어떻게 자동화하는가?
 
-꼭 알아야 하는건 아니지만 알아두면 유용할..수 도? 있는? 내용들을 알아보궜습니다. 
 ## Description
 -  **TestFlight**는 배포 전 iOS/iPadOS/macOS/tvOS/watchOS 앱을 내부/외부 테스터에게 **최대 90일** 동안 배포해 피드백을 받게 하는 베타 테스트 도구임. 내부 테스터(팀 구성원)는 심사 없이, **외부 테스터**는 **베타 앱 리뷰** 통과 후 테스트 가능함. 
     
