@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(swift package init:*)"
-    ],
-    "deny": [],
-    "ask": []
-  }
-}
