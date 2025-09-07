@@ -11,7 +11,7 @@
 2) 두 뷰를 **같은 실체**처럼 보이게 하는 `matchedGeometryEffect`를 사용한다.
 
 ![[ios_app_store_expanded_animation.mp4]]
-![[KakaoTalk_Video_2025-09-07-23-26-52.mp4]]
+![[ios_app_store_expanded_drag_animation.mp4]]
 
 ---
 
