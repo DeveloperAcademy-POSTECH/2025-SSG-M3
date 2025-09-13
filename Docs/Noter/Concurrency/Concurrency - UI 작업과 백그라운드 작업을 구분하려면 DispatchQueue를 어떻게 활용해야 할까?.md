@@ -173,14 +173,11 @@ func logEvent(_ message: String) {
 ### 5. 느낀 점과 한계
 
 - DispatchQueue는 Swift에 내장된 만큼 강력하고 성능 최적화된 도구다.
-    
-- 그러나 구조화된 흐름 제어에는 불편함 있다.
-    → 비동기 코드가 중첩되면 콜백 지옥(callback hell)처럼 복잡해지기도 함.
-    
-- 최근의 async/await 구조에 비해 **가독성과 유지보수성이 떨어질 수 있음**
+- 그러나 구조화된 흐름 제어에는 불편함이 있다.
+    → 비동기 코드가 중첩되면 콜백 지옥(callback hell)처럼 복잡해지기도 한다.
+- 최근의 async/await 구조에 비해 **가독성과 유지보수성이 떨어질 수 있다.**
     → 예: 중첩된 DispatchQueue.main.async / DispatchQueue.global().async 구조는 흐름 파악이 어렵다.
-    
-- 복잡한 비동기 로직이 많아질수록 DispatchQueue만으로는 흐름을 추적하고 디버깅하기 어려움
+- 복잡한 비동기 로직이 많아질수록 DispatchQueue만으로는 흐름을 추적하고 디버깅하기 어렵다.
 
 ### 정리
 
